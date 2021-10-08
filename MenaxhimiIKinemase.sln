@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenaxhimiIKinemase", "MenaxhimiIKinemase\MenaxhimiIKinemase.csproj", "{DE43D800-D980-4AB1-B8E7-B3FC05C577CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE43D800-D980-4AB1-B8E7-B3FC05C577CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE43D800-D980-4AB1-B8E7-B3FC05C577CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE43D800-D980-4AB1-B8E7-B3FC05C577CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE43D800-D980-4AB1-B8E7-B3FC05C577CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAB6ABCB-699D-4EC6-B4B3-572D5B73CFBD}
+	EndGlobalSection
+EndGlobal

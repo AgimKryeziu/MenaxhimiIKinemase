@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MenaxhimiIKinemase.Models.Orar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<style>
+    button a {
+        color: white;
+    }
+</style>
+<h1>Oraret</h1>
+
+<p>
+    <button class="btn btn-primary"><a asp-action="Create">Create New</a></button>
+</p>
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filmi)
+            </th>
+            <th>Veprimet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Filmi.Titulli)
+                </td>
+                <td>
+                    <button class="btn btn-success"> <a asp-action="Edit" asp-route-id="@item.OrariID">Edit</a> </button>
+                    <button class="btn btn-info"><a asp-action="Details" asp-route-id="@item.OrariID">Details</a> </button>
+                    <button class="btn btn-danger"> <a asp-action="Delete" asp-route-id="@item.OrariID">Delete</a></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

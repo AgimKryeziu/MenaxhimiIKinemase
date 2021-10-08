@@ -1,0 +1,64 @@
+﻿@model MenaxhimiIKinemase.Models.Film
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Film</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FilmiID" />
+            <div class="form-group">
+                <label asp-for="Titulli" class="control-label"></label>
+                <input asp-for="Titulli" class="form-control" />
+                <span asp-validation-for="Titulli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Premiera" class="control-label"></label>
+                <input asp-for="Premiera" class="form-control" />
+                <span asp-validation-for="Premiera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Regjisori" class="control-label"></label>
+                <input asp-for="Regjisori" class="form-control" />
+                <span asp-validation-for="Regjisori" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zhanri" class="control-label"></label>
+                <input asp-for="Zhanri" class="form-control" />
+                <span asp-validation-for="Zhanri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pershkrimi" class="control-label"></label>
+                <input asp-for="Pershkrimi" class="form-control" />
+                <span asp-validation-for="Pershkrimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieFile" class="control-label"></label>
+                <input asp-for="MovieFile " class="form-control" />
+                <span asp-validation-for="MovieFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrailerFile" class="control-label"></label>
+                <input asp-for="TrailerFile" accept="video/*" />
+                <span asp-validation-for="TrailerFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

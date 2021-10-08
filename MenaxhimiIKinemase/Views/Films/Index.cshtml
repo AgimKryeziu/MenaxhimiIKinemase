@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MenaxhimiIKinemase.Models.Film>
+
+@{
+    ViewData["Title"] = "Filmat";
+}
+
+<h1>Filmat</h1>
+<div>
+    <span style="float:left;">
+        <button class="btn btn-primary"><a asp-action="Create" style="color:white;">Create New</a></button>
+    </span>
+    <form class="d-flex" style="float:right;" method="get" asp-action="Index">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value="@ViewData["GetMovies"]" name="search">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
+
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulli)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Premiera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Regjisori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zhanri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePicture)
+            </th>
+            <th>Veprimet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Premiera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Regjisori)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zhanri)
+                </td>
+                <td>
+                    <img src="@("~/img/"+item.MoviePicture)" asp-append-version="true" width="100" height="100"/>
+                </td>
+                @*<td>
+                        <video src="@Url.Content("~/videos/"+item.MovieTrailer)" asp-append-version="true" controls width:400px height:400px loop/>
+                    </td>*@
+                <td>
+                    <button class="btn btn-success"><a asp-action="Edit" asp-route-id="@item.FilmiID">Edit</a></button>
+                    <button class="btn btn-info"><a asp-action="Details" asp-route-id="@item.FilmiID">Details</a> </button>
+                    <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.FilmiID">Delete</a></button>
+                </td>
+            </tr>
+        }
+    </tbody>

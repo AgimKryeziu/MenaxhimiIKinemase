@@ -1,0 +1,21 @@
+﻿@model MenaxhimiIKinemase.Models.Film
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(modelItem => Model.Titulli);
+}
+
+<link href="~/css/filmaDetails.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="trailer">
+        <video src="@Url.Content("~/videos/"+Model.MovieTrailer)" asp-append-version="true" controls width:400px; height:400px loop />
+    </div>
+    <hr />
+    <div class="description">
+        <p>Pershkrimi : @Html.DisplayFor(modelItem => Model.Pershkrimi)</p>
+        <h5>Titulli origjinal :  @Html.DisplayFor(modelItem => Model.Titulli)</h5>
+        <h5>Filmi fillon nga:  @Html.DisplayFor(modelItem => Model.Premiera)</h5>
+        <h5>Regjisori : @Html.DisplayFor(modelItem => Model.Regjisori)</h5>
+        <h5>Zhanri : @Html.DisplayFor(modelItem => Model.Zhanri) </h5>
+    </div>
+</div>
+<button class="btn btn-info"><a asp-action="IndexFilm">Kthehu te filmat</a></button>

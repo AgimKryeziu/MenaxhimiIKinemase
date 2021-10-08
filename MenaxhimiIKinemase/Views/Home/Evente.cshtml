@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MenaxhimiIKinemase.Models.Event>
+
+@{
+    ViewData["Title"] = "ABC";
+}
+
+<link href="~/css/filmaDetails.css" rel="stylesheet" />
+@foreach (var item in Model)
+{
+    <div class="container-fluid" style="margin-bottom:15px;">
+        <h1 style="margin-left:15px;"> @Html.DisplayFor(modelitem => item.Emertimi)</h1>
+        <div class="trailer">
+            <img alt="" src="@("~/img/" + item.EventPicture) " asp-append-version="true" height="200" width="130" />
+        </div>
+        <hr />
+        <div class="description" style="padding-bottom:10px;">
+            <p>Emertimi: @Html.DisplayFor(modelitem => item.Emertimi)</p>
+            <p>Pershkrimi: @Html.DisplayFor(modelitem => item.Pershkrimi)</p>
+            <p>Data: @Html.DisplayFor(modelItem => item.Data)</p>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MenaxhimiIKinemase.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Eventet</h1>
+
+<p>
+    <button class="btn btn-primary"> <a asp-action="Create" style="color:white;">Create New</a></button>
+</p>
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Emertimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pershkrimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventPicture)
+            </th>
+            <th>Veprimet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emertimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pershkrimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    <img src="@("~/img/"+item.EventPicture)" asp-append-version="true" width="75" height="100"/>
+                </td>
+                <td>
+                    <button class="btn btn-success"> <a asp-action="Edit" asp-route-id="@item.EventiID">Edit</a> </button>
+                    <button class="btn btn-info"> <a asp-action="Details" asp-route-id="@item.EventiID">Details</a> </button>
+                    <button class="btn btn-danger">  <a asp-action="Delete" asp-route-id="@item.EventiID">Delete</a></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
